@@ -4,12 +4,12 @@
     2a. class relationships
 
 Flow:
-- user is asked if they would like more info on the disease and sypmtoms
-- user is given info on disease and symptoms
-- user is asked another question
+- user is asked a set of question and can choose by number which one
+- user is given answer to question
+- user is asked if they would like the answer to another question and given same list of questions
 - ...
 
 Classes:
 - api (Application Programming Interface - data scraper) 
 - cli (Command Line Interface - app controller)
-- covid_info (data factory)  
+- country (data factory)  

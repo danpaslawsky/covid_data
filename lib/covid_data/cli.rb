@@ -4,3 +4,4 @@ class CovidData::CLI   #namespacing
         #binding.pry
     end
 end
+
