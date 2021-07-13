@@ -9,11 +9,11 @@ class API
         hash = JSON.parse(response)
         array_of_country_data = hash["All"]
         
-        array_of_country_data.each do |country|
-            Country.new(country["confirmed".to_i])
+        #array_of_country_data.each do |key, value|
+            #puts "#{key}: #{value}"
+            #Country.new(country["confirmed"].to_i)            
             #country_instance.str = country["country"]
-        end
-        binding.pry
+        #end
+        #binding.pry
     end
-
 end

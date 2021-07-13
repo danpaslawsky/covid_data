@@ -2,6 +2,6 @@
 
 require_relative '../lib/enviroment'
 
-CovidData::CLI.new.call
+CovidData::CLI.new.start
 
 API.start

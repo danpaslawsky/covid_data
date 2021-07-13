@@ -1,17 +1,17 @@
 # object factory
 
 class Country
-    attr_accessor :confirmed #:recovered, :deaths, :population, :people_vaccinated
+    attr_accessor :confirmed, :recovered, :deaths, :population, :people_vaccinated
 
     @@all = []
 
-    def initialize(confirmed) # change to meta programming. re-write as a hash or symbols
+    def initialize(confirmed, recovered, deaths, population, people_vaccinated) # change to meta programming. re-write as a hash or symbols
         @confirmed = confirmed
-        #@country = country
-        #@recovered = recovered
-        #@deaths = deaths
-        #@population = population
-        #@people_vaccinated = people_vaccinated
+        @country = country
+        @recovered = recovered
+        @deaths = deaths
+        @population = population
+        @people_vaccinated = people_vaccinated
 
         @@all << self
     end
@@ -19,5 +19,4 @@ class Country
     def self.all
         @@all
     end    
-
 end
