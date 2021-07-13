@@ -7,13 +7,8 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         hash = JSON.parse(response)
-        array_of_country_data = hash["All"]
         
-        #array_of_country_data.each do |key, value|
-            #puts "#{key}: #{value}"
-            #Country.new(country["confirmed"].to_i)            
-            #country_instance.str = country["country"]
-        #end
-        #binding.pry
+        array_of_country_data = hash["All"]["deaths"] #array 
+       # binding.pry
     end
 end

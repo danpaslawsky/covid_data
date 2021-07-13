@@ -1,3 +1,6 @@
+# command line interface
+# interact with user and connect files together
+
 
 class CovidData::CLI   #namespacing 
 
@@ -24,11 +27,11 @@ class CovidData::CLI   #namespacing
     def display_country_covid_data
         # Access all the country covid data
         # Print them out
-        
-        puts "Enter"     # test
-        Country.all.each do |country|
-            puts country 
-        end
+
+        # puts "Enter"     # test
+        # Country.all.each do |country|
+        #     puts country 
+        # end
     end    
 
 end
