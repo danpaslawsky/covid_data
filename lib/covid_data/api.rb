@@ -1,4 +1,6 @@
 # responsible for talking with API website
+# sends data to country class to receive parsed info to be put into objects
+# api controls this class and tells it what to search for
 
 class API
     
@@ -7,11 +9,10 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         hash = JSON.parse(response)
-        
+        #binding.pry
         country_data = hash["All"]
-        binding.pry
         country = Country.new(country_data["country"], country_data["confirmed"], country_data["recovered"], country_data["deaths"], country_data["population"])
-      
-       country
+            #binding.pry
+        country
     end
 end

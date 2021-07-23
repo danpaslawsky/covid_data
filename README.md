@@ -1,6 +1,6 @@
 # CovidData
 
-Find all current data on the Covid-19 virus
+Find all current data on the Covid-19 virus by country
 
 ## Installation
 

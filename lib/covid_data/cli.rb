@@ -1,68 +1,61 @@
 # command line interface
-# interact with user and connect files together
-
-# Methods:
-# start_welcomes_user
-# get_user_country
-# valid_input_check(input)
-# get_country_data
-# display_country_data_for(chosen_country)
+# app controller, interacts with user and connect files together
+# Tells API to go fetch information 
+# Receives back the data from objects created in the country.rb class
 
 
+# start: -welcome_user
+# menu: - get_user_country
+#       - get_country_data
+#       - display country data
+#       - continue to ask user if they would like to check more countries until answer is no, then exit app
+# valid_input_check: - Check spelling, if return is nill, error message to user to check spelling of country
 
-class CovidData::CLI   #namespacing 
+
+class CLI 
 
     def start
-        puts "Welcome to your source for Covid-19 data!"
-        # start up menuing
-        #API.fetch_array_of_country_data
-        #self.start
-        #binding.pry
-        menu
+        # start up
+        make_country     
     end
 
-    def menu
-    # get user input
-    # check to see if country exists already, if yes use it, if no pass user input to api and print that new instance
-    # ask user if they want another search, if yes, go back to top of this menue (loop) until user says no.
-    # say goodbye
-    country_name = get_user_country_input
-    country = API.get_country_info(country_name)
-    binding.pry
+    def make_country
+        # ask user if they want another search, if yes, go back to top of this menue (while loop) until user says no. 
+        
+        country_name = get_user_country_input # gets user input
+        # if country .findbyname returns obj display it
+        #   else try to make api call
+        #       if api is successful display new obj (Call valid inout conditon)
+        #         else display error
+        Country.find_by_name(user_input)
+        
+        country = API.get_country_info(country_name) # gets country data from api
+
+        display_country_data
     end
 
     def get_user_country_input
-        puts "Would you like to learn about Covid in your country"
+        puts "Welcome to your source for Covid-19 data!"
         puts "Please type the full name of the Country you would like to get Covid-19 data for."
-        puts "Entry is case sensative; ex: France, not france"
-        user_input = gets.strip
         
-        # if user_input == "yes" || user_input == "y"
-        #     puts "Please type the full name of your country"    # test
-        #     display_country_covid_data
-        # else
-        #     #end program
-        #     puts "Goodbye!"
-        # end
-        user_input
-    end
+        user_input = gets.strip.capitalize
 
-    def get_country_data
-    
+        user_input        
     end
     
-    def valid_input_check
-        # check to make sure country is written capitalized
-        # correct spelling of country. Or Give list of countries to choose from?
-    end
+    def valid_input_check(country)
+        # validate correct spelling        
+        # If returns nill
+        #    ask user to check spelling 
+    end 
 
-    def display_country_data_for()# << # chosen_country
-        # access get_country_data
-
-        # Country.all.each do |country|
-        #     puts country 
-        # end
-    end  
+    def display_country_data(country)
+            puts "Country: #{country.country}"
+            puts "Confirmed Cases: #{country.confirmed}" 
+            puts "Recovered Cases: #{country.recovered}" 
+            puts "Deaths: #{country.deaths}" 
+            puts "Country Population: #{country.population}"             
+    end    
 
 end
 
