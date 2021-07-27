@@ -14,12 +14,18 @@ CLI
 - user is welcomed to the app
 - user is asked to enter a country they would like to get Covid-19 data for
 - user enters country of choice
+
+  if country Country.findbyname(user input) returns obj 
+                display it
+           else try to make api call
+               if api is successful display new obj (Call valid inout conditon)
+                 else display error
+
+
 - validate correct spelling
         If returns nill
-        ask user to check spelling
+        display to user "check spelling or try entering a differnt country"
         
-        If comes back nill a 2nd time
-        tell user: "country does not apear to have any data on Covid-19. Please choose another country" 
 - CLI checks the object class(country.rb) for repeat inquiries, objects that already exist. 
         If yes 
         use that object to display to user 
@@ -47,3 +53,8 @@ Rubber Ducky Quetions
 - What are the problems the app is trying to solve?
         - How do I get the app to display the data from the API?
  
+ if Country.findbyname returns obj 
+        #       display it
+        #   else try to make api call
+        #       if api is successful display new obj (Call valid inout conditon)
+        #         else display error

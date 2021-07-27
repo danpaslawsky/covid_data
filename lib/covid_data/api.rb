@@ -11,7 +11,7 @@ class API
         hash = JSON.parse(response)
         #binding.pry
         country_data = hash["All"]
-        country = Country.new(country_data["country"], country_data["confirmed"], country_data["recovered"], country_data["deaths"], country_data["population"])
+        country = Country.new(country_data["country"], country_data["population"], country_data["confirmed"], country_data["recovered"], country_data["deaths"])
             #binding.pry
         country
     end
