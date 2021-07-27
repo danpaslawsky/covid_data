@@ -22,8 +22,7 @@ class Country
         @@all
     end 
 
-# Checks to see if country object already exists
-    def self.find_by_name(country)
+    def self.find_by_name(country) # Checks to see if country object already exists
         @@all.detect {|c| c.country == country}
     end 
     
