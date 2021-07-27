@@ -4,8 +4,8 @@
 2. flow of app    
 
 Classes:
-- api (Application Programming Interface - data scraper) 
 - cli (Command Line Interface - app controller)
+- api (Application Programming Interface - parses data) 
 - country (data factory/ object class) 
 
 
@@ -14,14 +14,6 @@ CLI
 - user is welcomed to the app
 - user is asked to enter a country they would like to get Covid-19 data for
 - user enters country of choice
-
-  if country Country.findbyname(user input) returns obj 
-                display it
-           else try to make api call
-               if api is successful display new obj (Call valid inout conditon)
-                 else display error
-
-
 - validate correct spelling
         If returns nill
         display to user "check spelling or try entering a differnt country"
@@ -44,17 +36,3 @@ API
 Country.rb (Object Class)
 - Stores objects of inforamtion parsed by the API
 - Keeps track of all requests made by user
-
-
-
-
-Rubber Ducky Quetions
-- How do I figure out the logic to solve the apps problems?
-- What are the problems the app is trying to solve?
-        - How do I get the app to display the data from the API?
- 
- if Country.findbyname returns obj 
-        #       display it
-        #   else try to make api call
-        #       if api is successful display new obj (Call valid inout conditon)
-        #         else display error

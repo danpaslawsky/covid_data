@@ -13,7 +13,6 @@ class CLI
             puts "Could not find country entered"
             puts "Please check the spelling"
         end      
-       #binding.pry
         loop
     end
 
@@ -35,7 +34,7 @@ class CLI
         puts "Would you like to enter another country? Enter Yes or type any other key"
         input = gets.strip.capitalize
              
-        if input == "Yes" || input =="Y"
+        if input == "Yes" || input == "Y"
             start
         else
             puts "Goodbye!" 
